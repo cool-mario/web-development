@@ -31,8 +31,8 @@ require_once "header.php"; // import the header from the other file
     $aiArt = $_POST["AIart"];           // text area
     $cloneFight = $_POST["fightQ"];     // another text area
     $chicken = $_POST["chicken"];       // dropdown
-    $mathType = $_POST["math-type"];             // checkbox (extra credit)
-    $englishType = $_POST["english-type"];       // checkbox (extra credit)
+    $mathType = $_POST["math-type"] ?? null;             // checkbox (extra credit)
+    $englishType = $_POST["english-type"] ?? null;       // checkbox (extra credit)
 
     echo "<p>Hello " . htmlspecialchars($name) . "!!! <strong>Here are your results:</strong> </p>";
 
@@ -49,8 +49,8 @@ require_once "header.php"; // import the header from the other file
     echo "<p>This is what you think about AI art: " . htmlspecialchars($aiArt) . "</p>";
     echo "<p>Here is how you will defeat a clone of yourself: " . htmlspecialchars($cloneFight) . "</p>";
 
-    echo "<p> Response to your chicken joke: " . htmlspecialchars($chicken) . "</p>";
-
+    echo "<p>So why did the chicken cross the road? " . htmlspecialchars($chicken) . "</p>";
+    echo "<p><strong>checkbox answers:</strong></p>";
     if ($mathType == "Math"){
         echo "<p>You like Math!!!</p>";
     } 

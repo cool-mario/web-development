@@ -33,12 +33,12 @@ require_once "header.php"; // import the header from the other file
             <label for="helth_gang">Get a healthy amount of sleep every night, but almost never be able to finish all your homework?</label>
         </p>
         <!-- what are your favorite subjects in school? (check box) Can't get the submit to work tho-->
-        <p>What are your favorite subjects at school?<br>
+        <p>What type of person are you?<br>
             <input type="checkbox" name="math-type" id="Math" value="Math">
             <label for="Math">Math</label>
 
-            <input type="checkbox" name="english-type" id="english" value="English">
-            <label for="english">English</label>
+            <input type="checkbox" name="english-type" id="English" value="English">
+            <label for="English">English</label>
 
         </p>
         <!-- why did the chicken cross the road? (dropdowm MC) SELECT element!! -->
