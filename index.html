@@ -4,20 +4,28 @@
     <meta charset="utf-8">
     <style>
         /* any text except for links */
-        * {
+        /* move them so that they aren't against the web page */
+        h1, p, a, table {
             color:rgb(255,184,118);
+            padding-left:20px; 
         }
         /* background color */
         body {
             background-color: rgb(32,33,36);
         }
-        /* links */
+        /* link color*/
         a {
             color:rgb(129,207,255);
+        }
+        /* secret */
+        a.nano {
+            font-size: 5px;
+            color:gray;
         }
         /* the table elements */
         th, td {
             padding: 10px;
+            color:rgb(255,184,118);
             background-color: rgb(57,45,37);
             line-height: 1.5;
         }
@@ -43,13 +51,13 @@
         <tr>
             <th>Week 1</th>
             <td>
-                <a href="https://atdpsites.berkeley.edu/acchan/H1-Your-First-Assignment/thing.html">
-            H1: Your First Assignment</a><br>
-                <a href="https://atdpsites.berkeley.edu/acchan/H2-spoiler-alert/hot-takes.php">
-                    H2: Spoiler Alert (due 6/21)</a>
+                <a href="https://atdpsites.berkeley.edu/acchan/H1-Your-First-Assignment/thing.html">H1: Your First Assignment</a><br>
+                <a href="https://atdpsites.berkeley.edu/acchan/H2-spoiler-alert/hot-takes.php">H2: Spoiler Alert (due 6/21)</a>
             </td>
-            <td><a href="https://atdpsites.berkeley.edu/acchan/X1-not-my-favorite-things/ryan.php">
-            X1: Not My Favorite Things (6/20/23)</a></td>
+            <td>
+                <a href="https://atdpsites.berkeley.edu/acchan/X1-not-my-favorite-things/ryan.php">X1: Not My Favorite Things (6/20/23)</a><br>
+                <a href="https://atdpsites.berkeley.edu/acchan/X2-Getting-to-Know-You/gettingtoknowyou.php">X2: Getting to Know You (6/22/23)</a>
+            </td>
         </tr>
     </table>
     
@@ -58,6 +66,7 @@
     <footer>
         <a href="/validate/">Validate HTML</a>
         <p>Aidan C</p>
+        <a href="https://github.com/cool-mario/web-development" class="nano">.</a>
     </footer>
 
 </body>
