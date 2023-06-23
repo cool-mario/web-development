@@ -1,0 +1,67 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #bdbdbd;
+    color: #d1d0db;
+    margin: 0;
+    padding: 0;
+  }
+  
+  h1, h2 {
+    color: #555555;
+  }
+  
+  p {
+    line-height: 1.5;
+  }
+  
+  /* select the input text boxes and text area, and make it dark mode */
+  input[type="text"], textarea {
+    color:#ffffff;
+    background-color : #242424; 
+  
+  }
+
+  /* Headers */
+  header {
+    background-color: #353535;
+    padding: 2%;
+    text-align: center;
+  }
+  
+  h1 {
+    color: #fff;
+    margin: 0;
+  }
+  
+  /* Sections */
+  section {
+    background-color: #343d4d;
+    padding: 40px;
+    margin-bottom: 25px;
+    margin-left: 25px;
+    margin-right: 25px;
+    /* fancy shadows!! use chrome editor to make editing this easier*/
+    box-shadow: inset 7px 9px 0px 7px rgba(190, 230, 255, 0.1); 
+  }
+
+  section#intro{
+    margin-top: 30px;
+  }
+  
+  section h2 {
+    color: #ffffff;
+    margin-top: 0;
+  }
+  
+  /* Footer - make text small and centered */
+  footer {
+    background-color: #333333;
+    color: #ffffff;
+    padding: 10px;
+    text-align: center;
+    font-size: 14px;
+  }
+  
+  footer p {
+    margin: 0;
+  }

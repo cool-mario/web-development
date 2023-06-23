@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Fixes the ' becoming â€™  and ! becoming ðŸ’€ -->
+    <meta charset="UTF-8"> 
+    <title>About Me</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Who am I?</h1>
+        <strong>Aidan Chan</strong>
+    </header>
+    
+
+    <section id="intro">
+        <h2>The Real Me</h2>
+        <p>
+            Hello! I'm Aidan, and I am a hardworking student who is interested in computer science, machine learning, math and science. I’ve also done many tech related projects too (see the next section)
+            I've started to look into biology and chemistry stuff as well, and because I want to explore potential jobs like dentistry or psychology.
+
+            I joined this class to make new friends, so feel free to talk to me!
+            <br>
+            In my free time, I like to play video games like Minecraft, and a bunch of different games on the nintendo switch. (mariokart, super smash bros, mario party, etc)
+
+            For college, I was originally thinking about majoring in CS, but seeing that its so competitive, I'm also researching data science and biology related fields.
+
+        </p>
+
+    </section>
+
+  <section id="tech">
+        <h2>The Tech Me</h2>
+        <p>
+            I've been interested in computers and technology for a long time. I know Python and Java very well. I also know some javascript, HTML, and CSS. Using python libraries, I can program many things, like machine learning models, and discord chatbots. I have also taken APCSP and APCSA, where I learned about how the internet works, and all about java.
+
+Large language models like ChatGPT are becoming really popular, and I want to try find ways to use AI tools to increase my productivity, without letting the AI do the work for me. OwO
+       </p>
+  </section>
+
+    <section id="questions">
+        <h2>The Mediated-Through-Questions-that-I'd-Like-to-Ask-Others</h2>
+        <form action="https://atdpsites.berkeley.edu/test.php" method="GET">
+            
+            <!-- name -->
+            <label for="name">Hello! What's your name?</label>
+            <input type="text" name="name" id="name" minlength="1" maxlength="69" size="20">
+            <br><br>
+            <!-- how many AP classes have you taken? (number line input) -->
+            <label for="APclasses">How many AP classes have you taken? (number input)</label>
+            <input type="number" name="APclasses" min="0" max="38" step="1">
+            <br>
+            <!-- would you rather stay up to 1 am everyday and finish all your homework, or get a good amount of sleep everyday, but not finish all of your homework?  (checkbox and radio)-->
+            <p>Would you rather...<br>
+                <input type="radio" name="would_you_rather" id="1am_gang" value="1am_gang">
+                <label for="1am_gang">Stay up to 1 AM and finish all of your homework, or...</label><br>
+                <input type="radio" name="would_you_rather" id="helth_gang" value="helth_gang">
+                <label for="helth_gang">Get a healthy amount of sleep every night, but almost never be able to finish all your homework?</label>
+            </p>
+            <!-- what are your favorite subjects in school? (check box) Can't get the submit to work tho-->
+            <p>What are your favorite subjects at school?<br>
+                <input type="checkbox" name="school_subj" id="Math" value="Math">
+                <label for="Math">Math</label>
+
+                <input type="checkbox" name="school_subj" id="english" value="English">
+                <label for="english">English</label>
+
+                <input type="checkbox" name="school_subj" id="History" value="History">
+                <label for="History">History</label>
+
+                <input type="checkbox" name="school_subj" id="Science" value="Science">
+                <label for="Science">Science</label>
+
+                <input type="checkbox" name="school_subj" id="Engineering" value="Engineering">
+                <label for="Engineering">Engineering</label>
+
+                <input type="checkbox" name="school_subj" id="Computer Science" value="Computer Science">
+                <label for="Computer Science">Computer Science</label>
+
+            </p>
+            <!-- why did the chicken cross the road? (dropdowm MC) SELECT element!! -->
+            <label for="chicken">Why did the chicken cross the road? (drop down)</label>
+            <select id="chicken" name="chicken">
+              <option value="1">To get to the other side</option>
+              <option value="2">To show the squirrel it could be done.</option>
+              <option value="3">To avoid this joke from being made</option>
+              <option value="4">To social distance from you</option>
+              <option value="5">To get to the loser’s house. Knock, knock! Who’s there? The chicken 💀</option>
+              <option value="6">bruh why u asking me ask the chicken</option>
+              <option value="7">The grass was greener on the other side.</option>
+              <option value="8">To get to the winner's house. Knock, knock! Who’s there? not the chicken.</option>
+            </select><br><br>
+            <!-- sleep -->
+            <label for="sleepytime">What time do you usually go to sleep?</label>
+            <input type="time" name="sleepytime" value="01:00">
+            <br><br>
+            <!-- stupidly hard math question (dropdown MC) -->
+            <!-- UwU or OwO? (radio) -->
+            <!-- how much rizz? rizzler moment -->
+
+            <label for="AIart">Open Ended question (textarea): <br>Do you think that AI generated art is real art? explain your answer.</label> <br>
+            <textarea id="AIart" name="AIart"></textarea><br><br>
+
+            <label for="fightQ">Here's an interesting sitation: You are challeneged to fight with a clone of yourself. The clone will be created an hour before the fight, so anything 1 hour before the clone won't know about, and you can prepare something. <br> How do you defeat yourself? </label> <br>
+            <textarea id="fightQ" name="fightQ" required></textarea>
+
+            
+            <br>
+            <input type="submit" value="Submit!">
+
+        </form>
+    </section>
+
+    <br><br><br>
+    <hr />
+
+    <footer>
+    <p>Made by Aidan Chan 2023</p>
+    <p>Advanced internet classroom (Web devlopment)</p>
+    </footer>
+</body>
+</html>
