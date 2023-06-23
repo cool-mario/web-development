@@ -7,4 +7,10 @@ Here are the projects I worked on in the web devlopment class!
 
 also see index for links to all the other pages
 
+### Stuff you can find:
+
+php stuff  
+javascript stuff
+
+
 For me, this also serves as a back up in case I accedentally delete all my files on the web server
