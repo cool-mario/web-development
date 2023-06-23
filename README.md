@@ -2,7 +2,7 @@
 
 Here are the projects I worked on in the web devlopment class!
 
-**H** - homework
+**H** - homework  
 **X** - exersize
 
 also see index for links to all the other pages
