@@ -5,7 +5,7 @@ Here are the projects I worked on in the web devlopment class!
 **H** - homework  
 **X** - exersize
 
-also see index for links to all the other pages
+also see `index.html` for links to all the other pages displayed in a nice table!
 
 ### Stuff you can find:
 
