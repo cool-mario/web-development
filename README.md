@@ -11,6 +11,7 @@ also see `index.html` for links to all the other pages displayed in a nice table
 
 php stuff  
 javascript stuff
+some css
 
 
-For me, this also serves as a back up in case I accedentally delete all my files on the web server
+For me, this also serves as a back up in case I accidentally delete all my files on the web server =D
