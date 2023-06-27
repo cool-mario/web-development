@@ -1,0 +1,83 @@
+<!-- http://atdpsites.berkeley.edu/rastley/aicdemos/03/jquery.html -->
+<!-- <script>
+Type this stuff into the console of this website
+
+// jQuery function is just $
+
+$("#box1");   // select an object with a CSS selector
+
+$("#box1").addClass("colorful"); // add a colorful class to the object
+
+$("box1").removeClass("colorful"); // remove the colorful class
+
+
+$(".box"); // you can select multiple objects
+
+$(".box").removeClass("box").addClass("colorful"); // do 2 things in one!!!!
+
+
+$("box2").after($("box1")); // put box 1 after box2
+
+#("#box2").append($("#box1")); // put box1 inside of box2
+
+// look up prepend
+
+</script> -->
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jQuery</title>
+	<meta charset="utf-8">
+
+	<style>
+		.box { 
+            border: 5px solid black; 
+        }
+		.unimportantbox { 
+            border: 7px dotted #ccc; color: #ddd; 
+        }
+		.colorful {
+             color: #f5028b; font-weight: bold; 
+        }
+		p {
+             margin: 10px; padding: 10px 13px; 
+        }
+		#box1 {
+             background-color: lavender; 
+        }
+		#box2 {
+             background-color: aquamarine;
+        }
+		#box3 {
+             background-color: gainsboro; 
+        }
+	</style>
+
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script>
+
+        // pass an anonymous function inside of the ready function
+        // tell jQuery to wait until the DOM is completely loaded before we run any javascript.
+		$(document).ready( () => {
+
+			$(".box").addClass("colorful");
+
+		});
+
+        // note the anonymous function is weird, there's a FAT arrow =>
+	</script>
+
+</head>
+<body>
+	<header><h3>jQuery playground</h3></header>
+
+	<p id="box1" class="box">Salvete mundus!!</p>
+
+	<p id="box2" class="box">My name is Joe. My father left to get the milk. Prepare to get ligma.</p>
+
+	<p id="box3" class="unimportantbox">Students who greet the instructor with a hearty 'haldo' will receive an undisclosed number of extra credit points.</p>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <script src="stuff.js"></script> how to import java script stuff -->
+    <title>Javascript basicz</title>
+
+
+    <script>
+        let dog = "joe";
+
+        if (dog == "joe"){
+            console.log("Joe mama!!!!");
+        }
+        else if (dog == "luca"){  // you can do "===" for type to be equal and even "!=="
+            console.log("hello luca!!! =D");
+        }
+        else {
+            console.log("dog is ralph");
+        }
+
+        if ("1" == 1){
+            // true
+        }
+        if ("1" === 1){
+            // false
+        }
+
+        // cast string to int:
+        console.log(+"69");  // you use a plus and it automatically converts to int
+
+        // cast int to string:
+        console.log(`${420}`); // template literal
+
+
+        // for loop: print numbers 0 to 99
+        for (let i = 0; i < 100; i++){
+            console.log(i);
+        }
+        // console.log(i); // i is scoped inside of the for loop so this causes an error
+
+        // arrays!
+        let elements = ["carbon", "gold", "uranium", "hydrogen"];
+
+        // everything in js is an object
+        for (let i = 0; i < elements.length; i++){
+            console.log(elements[i]);
+        }
+
+        // for each loop, but its "for of" loop -_-
+        for (let element of elements){
+            console.log(element);
+        }
+
+        //functions
+        function areaOfRectangle(width, length) {
+            let area = width * length;
+            return area;
+        }
+
+        console.log(areaOfRectangle(987, 12345));
+
+        // anonymous function: a function w/out a name?!?!?!??!??!?!?!??!?!?!?!?!??!??!!?!?????!?!?!??
+        (width, length) => {
+            return width * length;
+        }
+
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>
