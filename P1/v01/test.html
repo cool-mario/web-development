@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <style>
+        body {
+            background-color: black;
+            color: antiquewhite;
+            margin-left: 2%;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <h1>The Nerd test</h1>
+    <p>which one r u?</p>
+
+    <form action="results.php" method="post">
+
+        <p>Which character can you relate with most?</p>
+        <!-- the value and name is for the post -->
+        <input type="radio" name="character" id="walter_white" value="walter_white">
+        <label for="walter_white">Walter White from Breaking Bad</label><br>
+        <input type="radio" name="character" id="sheldon" value="sheldon">
+        <label for="sheldon">Sheldon from the Big Bang Theory</label><br>
+
+
+
+        <!-- 
+            ideas:
+            
+            what time do you go to sleep every night (1 am = nerd, 11 pm = not nerd)
+        
+            ask a hard math problem
+
+            what's your favorite math equation?
+            1+1=2
+            e^(i*pi) = -1
+            
+
+        -->
+
+        <input type="submit" value="Submit">
+
+    </form>
+</body>
+</html>
