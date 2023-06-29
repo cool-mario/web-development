@@ -8,6 +8,10 @@
             background-color: black;
             color: antiquewhite;
         }
+        th, td {
+            background-color:  rgb(75,73,129);
+            padding: 10px;
+        }
     </style>
 
     <title>Document</title>
@@ -15,14 +19,30 @@
 <body>
     <?php
 
-    var_dump($_POST);
+    // var_dump($_POST);
 
-    $mathNerd = 0;
-    $chemNerd = 0;
-    $csNerd   = 0;
-    $historyNerd = 0;
-    $engineerNerd = 0;
-    $notANerd = 0;
+    echo '<table>';
+    echo '<tr><th>Key</th><th>Value</th></tr>';
+
+    foreach ($_POST as $key => $value) {
+        echo '<tr><td>' . htmlspecialchars($key) . '</td><td>' . htmlspecialchars($value) . '</td></tr>';
+    }
+    echo '</table>';
+
+    $mathNerd = 0;      // math
+    $chemNerd = 0;      // Chemistry
+    $csNerd   = 0;      // Computer Science
+    $historyNerd = 0;   // History
+    $engineerNerd = 0;  // Engineer
+    $litNerd  = 0;      // Literature Nerd 
+    $notANerd = 0;      // not a nerd!
+
+    // get all the post request values
+    char = $_POST["character"];
+    sleepHour = $_POST["sleepHours"];
+    skoolSub = $_POST["skool"];
+    
+
 
     ?>
     

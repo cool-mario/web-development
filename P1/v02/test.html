@@ -10,28 +10,109 @@
             color: antiquewhite;
             margin-left: 2%;
         }
+        /* title stuff */
+        h1, h1+p {
+            text-align: center;
+        }
+        h1 {
+            font-size: 250%;
+        }
+        /* select question titles */
+        form > p {
+            color: rgb(220,196,140);
+            font-weight: bold;
+        }
+
+        /* question answers */
+        label {
+            line-height: 1.5;
+        }
+        /* the nerd image */
+        img#nerd {
+            position: absolute;
+            top: 9%;
+            margin: 10px;
+        }
+
     </style>
     <title>Document</title>
 </head>
 <body>
-    <h1>The Nerd test</h1>
+    <h1>The Nerd test!</h1>
     <p>which one r u?</p>
 
-    <form action="results.php" method="post">
+    <h2>Instructions</h2>
+    <p>
+        Answer these interesting questions. When you submit, you'll find out what type of nerd you most likely are! 
+        <img src="../nerd.jpg" alt="NERRRRD!!!" width="70" id="nerd">
+    </p>
 
-        <p>Which character can you relate with most?</p>
+    <hr>
+
+    <form action="results.php" method="post">
         <!-- the value and name is for the post -->
+
+        <!-- character -->
+        <p>Which character can you relate with most?</p>
         <input type="radio" name="character" id="walter_white" value="walter_white">
         <label for="walter_white">Walter White from Breaking Bad</label><br>
+
         <input type="radio" name="character" id="sheldon" value="sheldon">
         <label for="sheldon">Sheldon from the Big Bang Theory</label><br>
+
         <input type="radio" name="character" id="harry" value="harry">
         <label for="harry">Harry from harry potter</label><br>
 
-        <p>What time do you sleep at every night?</p>
-        <input type="time" name="sleeptime" value="01:00">
+        <!-- sleep -->
+        <p>How many hours of sleep do you get on average?</p>
+        <input type="number" name="sleepHours" value="6"><br>
 
-        <p></p>
+        <!-- skool -->
+        <p>What's your favorite class? (or one you most want to take)</p>
+        <input type="radio" name="skool" id="APchem" value="APchem">
+        <label for="APchem">Chemistry</label><br>
+
+        <input type="radio" name="skool" id="APcalc" value="APcalc">
+        <label for="APcalc">Calculus</label><br>
+
+        <input type="radio" name="skool" id="APphysics" value="APphysics">
+        <label for="APphysics">Chemistry</label><br>
+
+        <input type="radio" name="skool" id="APCSA" value="APCSA">
+        <label for="APCSA">Computer Science</label><br>
+
+        <input type="radio" name="skool" id="APlang" value="APlang">
+        <label for="APlang">Language or Literature</label><br>
+
+        <input type="radio" name="skool" id="APUSH" value="APUSH">
+        <label for="APUSH">US history or AP Euro</label><br>
+
+        <input type="radio" name="skool" id="none" value="none">
+        <label for="none">ew AP classes are dumb</label><br>
+
+        <p>What's your favorite equation?</p>
+
+        <input type="radio" name="equation" id="chemistry">
+        <label for="chemistry">C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> + 6O<sub>2</sub> → 6CO<sub>2</sub> + 6H<sub>2</sub>O + Energy</label><br>
+        
+        <input type="radio" name="equation" id="math" value="math">
+        <label for="math">e<sup>iπ</sup> + 1 = 0</label><br>
+        
+        <input type="radio" name="equation" id="physics" value="physics">
+        <label for="physics">F = ma</label><br>
+        
+        <input type="radio" name="equation" id="none" value="none">
+        <label for="EZ">1+1=2</label><br>
+
+        <input type="radio" name="equation" id="CS" value="CS">
+        <label for="EZ">!(A && B) = !A || !B </label><br>
+
+        
+
+        
+
+
+        <!-- rick and morty, friends, big bang theory -->
 
         <!-- 
             ideas:
@@ -46,7 +127,7 @@
             
 
         -->
-
+        <br><br>
         <input type="submit" value="Submit">
 
     </form>
