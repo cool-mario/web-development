@@ -41,7 +41,8 @@
     char = $_POST["character"];
     sleepHour = $_POST["sleepHours"];
     skoolSub = $_POST["skool"];
-    
+    equation = $_POST["equation"];
+
 
 
     ?>
