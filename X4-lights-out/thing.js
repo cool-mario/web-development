@@ -18,17 +18,28 @@ $(document).ready(function(){
         left.toggleClass("on");
 
         // probably overcomplicated it lol
-        let topIndex = target.parent().index();
-        let topRow = $("tr").eq(topIndex-1);
-        topRow.find("td").eq(index).toggleClass("on");
+        let top = target.parent().prev().children().eq(index);
+        top.toggleClass("on");
 
-        let bottom = target.parent().index();
-        let bottomRow = $("tr").eq(bottom+1);
-        bottomRow.find("td").eq(index).toggleClass("on");
 
-        let table = $("table");
-        // loop thru lights
-        for ()
+        let bottom = target.parent().next().children().eq(index);
+        bottom.toggleClass("on");
+
+        // let bottom = target.parent().index();
+        // let bottomRow = $("tr").eq(bottom+1);
+        // bottomRow.find("td").eq(index).toggleClass("on");
+
+
+
+        let allTD = $("td");
+        // let win = true;
+
+        // if one of them is not on, win is false
+        if (!allTD.hasClass("on")){
+            $("#winText").toggleClass("hidden");
+        }
+
+      
 
     });
 

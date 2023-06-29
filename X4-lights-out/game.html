@@ -2,7 +2,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title></title>
     <meta charset="utf-8">
     <title>Lights out!!</title>
     <style>
@@ -22,9 +21,14 @@
         background-color: rgb(255, 247, 133);
     }
 
-    hidden {
-        text-sai
+    .hidden {
+        visibility: hidden;
     }
+    h1 {
+        color: white;
+        font-size: 50px;
+    }
+
 
     </style>
     <script
@@ -40,11 +44,11 @@
 <table>
     <tr><td></td><td></td><td></td><td></td><td></td></tr>
     <tr><td></td><td></td><td class="on"></td><td></td><td></td></tr>
-    <tr><td></td><td></td><td></td><td></td><td></td></tr>
-    <tr><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td></td><td></td><td class="on"></td><td></td><td></td></tr>
+    <tr><td></td><td></td><td class="on"></td><td></td><td></td></tr>
     <tr><td></td><td></td><td></td><td></td><td></td></tr>
 </table>
-<p class="hidden">You win!</p>
+<h1 class="hidden" id="winText">You win!</h1>
 
 </body>
 </html>
