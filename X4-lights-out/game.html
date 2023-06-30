@@ -3,18 +3,25 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
+    <!-- with this you can play the game on your phone -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <title>Lights out!!</title>
     <style>
 
     body {
         background-color: #555;
+        margin-left: 3%;
     }
 
     td {
         height: 75px;
         width: 75px;
-        border: 1px solid #343434;
+        border: 2px solid #00000000;
         background-color: #393939;
+    }
+    /* nice outline! */
+    td:hover {
+        border: 2px solid #929292;
     }
 
     .on {
@@ -23,10 +30,14 @@
 
     .hidden {
         visibility: hidden;
+        font-size: 2%; /* so it doesn't take up empty space */
     }
     h1 {
-        color: white;
         font-size: 50px;
+    }
+    /* make all text white */
+    h1, h2, h3, p {
+        color: white;
     }
 
 
@@ -41,14 +52,19 @@
 </head>
 
 <body>
+    <h1>Lights Out game!!</h1>
+    <p>Turn all the lights off to win!!</p>
 <table>
     <tr><td></td><td></td><td></td><td></td><td></td></tr>
-    <tr><td></td><td></td><td class="on"></td><td></td><td></td></tr>
-    <tr><td></td><td></td><td class="on"></td><td></td><td></td></tr>
-    <tr><td></td><td></td><td class="on"></td><td></td><td></td></tr>
+    <tr><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td></td><td></td><td></td><td></td><td></td></tr>
     <tr><td></td><td></td><td></td><td></td><td></td></tr>
 </table>
+<h2 id="level">Level: 1</h2>
 <h1 class="hidden" id="winText">You win!</h1>
+<!-- <br> -->
+<button id="reset">Reset game (to level 1)</button>
 
 </body>
 </html>
