@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <style>
+        body {
+            background-color: black;
+            color: antiquewhite;
+            margin-left: 2%;
+        }
+
+        /* form {
+            background-color: rgb(30,31,34);
+        } */
+        /* title stuff */
+        h1, h1+p {
+            text-align: center;
+        }
+        h1 {
+            font-size: 250%;
+        }
+        /* select question titles */
+        form > p {
+            color: rgb(220,196,140);
+            font-weight: bold;
+        }
+
+        /* question answers */
+        label {
+            line-height: 1.5;
+        }
+        /* the nerd image */
+        img#nerd {
+            position: absolute;
+            top: 9%;
+            margin: 10px;
+        }
+
+        /* inputs */
+        input {
+            background-color:rgb(30,31,34);
+            color: aliceblue;
+            font-size: 20px;
+            margin: 3px 3px 0px 20px;
+        }
+        input[type="number"] {
+            width: 40px;
+        }
+        input[type="checkbox"] {
+            width: 50px;
+            height: 50px;
+            margin-left: 3%;
+        }
+
+    </style>
+    <title>The Nerd Test</title>
+</head>
+<body>
+    <h1>The Nerd test!</h1>
+    <p>which one r u?</p>
+
+    <h2>Instructions</h2>
+    <p>
+        Answer these interesting questions. When you submit, you'll find out what type of nerd you most likely are! 
+        <img src="../nerd.jpg" alt="NERRRRD!!!" width="70" id="nerd">
+    </p>
+
+    <hr>
+
+    <form action="results.php" method="post">
+        <!-- the value and name is for the post -->
+
+        <!-- character -->
+        <p>Which TV show/movie can you relate with most?</p>
+        <input type="radio" name="character" id="walter_white" value="walter_white">
+        <label for="walter_white">Breaking Bad</label><br>
+
+        <input type="radio" name="character" id="sheldon" value="sheldon">
+        <label for="sheldon">The Big Bang Theory</label><br>
+
+        <input type="radio" name="character" id="harry" value="harry">
+        <label for="harry">Harry Potter</label><br>
+
+        <input type="radio" name="character" id="blackMirror" value="blackMirror">
+        <label for="blackMirror">Black Mirror</label><br>
+
+        <!-- sleep -->
+        <p>How many hours of sleep do you get on average?</p>
+        <input type="number" name="sleepHours" value="6"><br>
+
+        <!-- skool -->
+        <p>What's your favorite class? (or one you most want to take)</p>
+        <input type="radio" name="skool" id="APchem" value="APchem">
+        <label for="APchem">Chemistry</label><br>
+
+        <input type="radio" name="skool" id="APcalc" value="APcalc">
+        <label for="APcalc">Calculus</label><br>
+
+        <input type="radio" name="skool" id="APphysics" value="APphysics">
+        <label for="APphysics">Chemistry</label><br>
+
+        <input type="radio" name="skool" id="APCSA" value="APCSA">
+        <label for="APCSA">Computer Science</label><br>
+
+        <input type="radio" name="skool" id="APlang" value="APlang">
+        <label for="APlang">Language or Literature</label><br>
+
+        <input type="radio" name="skool" id="APUSH" value="APUSH">
+        <label for="APUSH">US history or AP Euro</label><br>
+
+        <input type="radio" name="skool" id="none" value="none">
+        <label for="none">ew AP classes are dumb</label><br>
+
+        <!-- equation -->
+        <p>What's your favorite equation?</p>
+        <input type="radio" name="equation" id="chemistry" value="chemistry">
+        <label for="chemistry">C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> + 6O<sub>2</sub> → 6CO<sub>2</sub> + 6H<sub>2</sub>O + Energy</label><br>
+        
+        <input type="radio" name="equation" id="math" value="math">
+        <label for="math">e<sup>iπ</sup> + 1 = 0</label><br>
+        
+        <input type="radio" name="equation" id="physics" value="physics">
+        <label for="physics">F = ma</label><br>
+        
+        <input type="radio" name="equation" id="none" value="none">
+        <label for="none">1+1=2</label><br>
+
+        <input type="radio" name="equation" id="CS" value="CS">
+        <label for="CS">!(A && B) == !A || !B </label><br>
+
+        <!-- youtube channel -->
+        <p>Which Youtube channel do you watch the most?</p>
+        <input type="radio" name="youtube" id="3b1b" value="math">
+        <label for="3b1b">3Blue1Brown</label>
+        
+        <input type="radio" name="youtube" id="NileRed" value="chemistry">
+        <label for="NileRed">NileRed</label>
+        
+        <input type="radio" name="youtube" id="Mark Rober" value="engineering">
+        <label for="Mark Rober">Mark Rober</label>
+        
+        <input type="radio" name="youtube" id="Mr Beast" value="none">
+        <label for="Mr Beast">Mr Beast</label>
+        
+        <input type="radio" name="youtube" id="FireShip" value="CS">
+        <label for="FireShip">FireShip</label>
+        <br><br>
+
+        <!-- Social media -->
+        <p><label for="socialMedia">How many people follow you on social media? (like youtube, instagram, etc)</label></p>
+        <select name="socialMedia" id="socialMedia">
+            <option value="---">click for dropdown!</option>
+            <option value="a lot">Like more than 100 people!</option>
+            <option value="more than 30">More than 30!</option>
+            <option value="a little">A few people</option>
+            <option value="what">Wait, whats social media?? why are people following me?!</option>
+        </select>
+
+        <!-- sports -->
+        <p>Are you on a sports team?</p>
+        <input type="checkbox" name="sports">
+
+        <!-- introvert -->
+        <p>Do you like individual projects or group projects?</p>
+        <input type="radio" name="projects" id="individual">
+        <label for="individual">Individual projects</label>
+        <input type="radio" name="projects" id="group">
+        <label for="group">Group projects</label>
+
+        <!-- fashion -->
+        <p>How much time do you spend picking out your clothes for the day?</p>
+        <select name="pickClothes">
+            <option value="---">click for dropdown!</option>
+            <option value="barely">0.0024351 nanoseconds</option>
+            <option value="1min">just 1 minute</option>
+            <option value="1hour">An hour of debating and comparing</option>
+            <option value="zero">I just wear the same shirt everyday so 0 seconds</option>
+        </select>
+
+        <!-- workspace -->
+        <p>What is your ideal workspace?</p>
+        <input type="radio" name="workspace" id="organized" value="organized">
+        <label for="organized">Organized and neat</label><br>
+
+        <input type="radio" name="workspace" id="experiment" value="experiment">
+        <label for="experiment">Full of experimental gadjects that you made</label><br>
+
+        <input type="radio" name="workspace" id="art" value="art">
+        <label for="art">color and filled with artwork to inspire you</label><br>
+
+        <input type="radio" name="workspace" id="tech" value="tech">
+        <label for="tech">2 monitor setup with a custom PC and rainbow LEDs</label><br>
+
+        <br><br>
+        <input type="submit" value="Submit">
+
+    </form>
+
+    <br><br><hr>
+    <footer>
+        <p>ATDP Corp.</p>
+        <p>Made by Aidan C =)</p>
+    </footer>
+
+</body>
+</html>
