@@ -42,16 +42,19 @@
         input {
             background-color:rgb(30,31,34);
             color: aliceblue;
-            font-size: 20px;
             margin: 3px 3px 0px 20px;
         }
         input[type="number"] {
-            width: 40px;
+            font-size: 200%;
+            width: 45px;
         }
         input[type="checkbox"] {
             width: 50px;
             height: 50px;
             margin-left: 3%;
+        }
+        input[type="submit"] {
+            font-size: 200%;
         }
 
     </style>
@@ -99,7 +102,7 @@
         <label for="APcalc">Calculus</label><br>
         <!-- remove? -->
         <input type="radio" name="skool" id="APphysics" value="physics">
-        <label for="APphysics">Chemistry</label><br>
+        <label for="APphysics">Physics</label><br>
 
         <input type="radio" name="skool" id="APCSA" value="cs">
         <label for="APCSA">Computer Science</label><br>
@@ -107,11 +110,11 @@
         <input type="radio" name="skool" id="APlang" value="lit">
         <label for="APlang">Language or Literature</label><br>
 
-        <input type="radio" name="skool" id="APUSH" value="history">
-        <label for="APUSH">US history or AP Euro</label><br>
+        <!-- <input type="radio" name="skool" id="APUSH" value="history">
+        <label for="APUSH">US history or AP Euro</label><br> -->
 
         <input type="radio" name="skool" id="none" value="not">
-        <label for="none">ew AP classes are dumb</label><br>
+        <label for="none">I just want my lunch</label><br>
 
         <!-- equation -->
         <p>What's your favorite equation?</p>
@@ -125,7 +128,11 @@
         <label for="physics">F = ma</label><br>
         
         <input type="radio" name="equation" id="none" value="not">
-        <label for="none">1+1=2</label><br>
+        <label for="none">1+1=3</label><br>
+
+        <input type="radio" name="english" id="english" value="lit">
+        <label for="english">Independent Clause + Conjunction + Independent Clause = Compound Sentence</label><br>
+
 
         <input type="radio" name="equation" id="CS" value="cs">
         <label for="CS">!(A && B) == !A || !B </label><br>
@@ -135,16 +142,16 @@
         <input type="radio" name="youtube" id="3b1b" value="math">
         <label for="3b1b">3Blue1Brown</label>
         
-        <input type="radio" name="youtube" id="NileRed" value="chemistry">
+        <input type="radio" name="youtube" id="NileRed" value="chem">
         <label for="NileRed">NileRed</label>
         
-        <input type="radio" name="youtube" id="Mark Rober" value="engineering">
+        <input type="radio" name="youtube" id="Mark Rober" value="physics">
         <label for="Mark Rober">Mark Rober</label>
         
-        <input type="radio" name="youtube" id="Mr Beast" value="none">
+        <input type="radio" name="youtube" id="Mr Beast" value="not">
         <label for="Mr Beast">Mr Beast</label>
         
-        <input type="radio" name="youtube" id="FireShip" value="CS">
+        <input type="radio" name="youtube" id="FireShip" value="cs">
         <label for="FireShip">FireShip</label>
         <br><br>
 
@@ -174,9 +181,10 @@
         <select name="pickClothes">
             <option value="---">click for dropdown!</option>
             <option value="barely">0.0024351 nanoseconds</option>
-            <option value="1min">just 1 minute</option>
-            <option value="1hour">An hour of debating and comparing</option>
             <option value="zero">I just wear the same shirt everyday so 0 seconds</option>
+            <option value="a few">A few minutes or more comparing clothes</option>
+            <option value="a lot">I spend a ton of time! Gotta look good bro</option>
+            <option value="1min">just 1 minute</option>
         </select>
 
         <!-- workspace -->
@@ -187,11 +195,17 @@
         <input type="radio" name="workspace" id="experiment" value="experiment">
         <label for="experiment">Full of experimental gadjects that you made</label><br>
 
+        <input type="radio" name="workspace" id="dump" value="dump">
+        <label for="dump">A total garbage dump</label><br>
+
         <input type="radio" name="workspace" id="art" value="art">
         <label for="art">color and filled with artwork to inspire you</label><br>
 
         <input type="radio" name="workspace" id="tech" value="tech">
         <label for="tech">2 monitor setup with a custom PC and rainbow LEDs</label><br>
+
+        <input type="radio" name="workspace" id="books" value="books">
+        <label for="books">Filled with history books</label><br>
 
         <br><br>
         <input type="submit" value="Submit">
