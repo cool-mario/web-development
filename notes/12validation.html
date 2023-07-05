@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validation</title>
+
+    <style>
+
+        /* psuedo selector */
+        input:invalid {
+            background-color: pink;
+        }
+        input:required {
+            border: 50px dotted skyblue;
+        }
+
+    </style>
+</head>
+<body>
+    <form action="13validate.php" method="post">
+
+        <!-- cool email type, where the form doesn't submit if the text isn't an email -->
+        <p><input type="email" name="email"></p>
+        <!-- it's not over 9000!!!! Also make the input required--> 
+        <p><input type="number" name="level" min="1" max="9000" required></p>
+
+
+
+
+        <p><input type="submit"  value="Submit"></p>
+
+    </form>
+
+</body>
+</html>
