@@ -1,9 +1,13 @@
+<!-- https://atdpsites.berkeley.edu/acchan/ -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
     <!-- this makes it work on different screen sizes like a phone -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- import custom font -->
+    <link href="https://fonts.googleapis.com/css2?&family=Nunito" rel="stylesheet"> 
     <style>
         /* move everything a bit so that they aren't against the web page */
         body {
@@ -12,6 +16,8 @@
         /* any text except for links */
         h1, p, a, table {
             color:rgb(255,184,118);
+            /* custom font! */
+            font-family: 'Nunito', sans-serif;
         }
         /* background color */
         body {
@@ -48,13 +54,28 @@
             background-color: rgb(73,60,48);
             border: none;
         }
+        /* Nerd! */
+        #nerd {
+            position: absolute;
+            right: 5vw;
+            top: 15vh;
+            max-width: 10%;
+            max-height: 10%;
+        }
+        #nerd:hover {
+            max-width: 1000%;
+            max-height: 1000%;
+        }
+
+       
+
         
     </style>
 
     <title>Index</title>
 </head>
 <body>
-    <h1>Homework:</h1>
+    <h1>Homework for Web Development:</h1>
     <table>
         <tr>
             <th>OwO</th>
@@ -77,17 +98,32 @@
         <tr>
             <th>Week 2</th>
             <td>
-                
+                <a href="//atdpsites.berkeley.edu/acchan/P1/v02.6/test.html">P1: Augment 1</a><br>
+                <a href="//atdpsites.berkeley.edu/acchan/P1/v03/test.html">P1: Augment 2</a>
             </td>
             <td>
-                <a href="//atdpsites.berkeley.edu/acchan/X3-Department-o-Corrections/corrections.html">X3: Department of Corrections Corrections</a>
+                <a href="//atdpsites.berkeley.edu/acchan/X3-Department-o-Corrections/corrections.html">X3: Department of Corrections Corrections</a><br>
+                <a href="//atdpsites.berkeley.edu/acchan/X4-lights-out/game.html">X4: Lights Out game</a>
             </td>
             <td>
                 <a href="//atdpsites.berkeley.edu/acchan/P1/v02/test.html">P1: Stress Test</a>
             </td>
         </tr>
+        <tr>
+            <th>Week 3</th>
+            <td>
+                <a href="//atdpsites.berkeley.edu/acchan/P1/v04/test.html">P1: Augment 3....</a>
+            </td>
+            <td>
+                <a href="//atdpsites.berkeley.edu/achandra/2023_AIC/X5/x5index.php">X5: Magic Mixerator</a><br>
+                <a href="//atdpsites.berkeley.edu/acchan/X6-gotta-ketch-em-all/links.html">X6: Gotta Catch <del>em all!</del> a very specific subset!</a>
+            </td>
+            <td></td>
+        </tr>
     </table>
     
+    <br>
+    <img src="P1/nerd.jpg" alt="🤓🤓🤓🤓" id="nerd">
 
     <br><br><hr>
     <footer>
