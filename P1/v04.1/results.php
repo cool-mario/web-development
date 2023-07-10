@@ -7,7 +7,7 @@
     <style>
         header {
             /* the background is the user's favorite color! */
-            background-color: <?php echo $_POST["color"];?> ;
+            background-color: <?php echo htmlspecialchars($_POST["color"]);?> ;
         }
     </style>
 
@@ -20,10 +20,8 @@
     require_once("header.php");
 
     require_once("functions.php");
-    // var_dump($_POST);
     // print_array($_POST);
     
-
     $nerd = array(
         "math" => 0,
         "chem" => 0,
@@ -51,20 +49,12 @@
     $projects = $_POST["projects"] ?? null;
     $pickClothes = $_POST["pickClothes"] ?? null;
     $workspace = $_POST["workspace"] ?? null;
-
-    $user = array(
-        "name" => $_POST["name"],
-        "age" => $_POST["age"],
-        "email" => $_POST["email"],
-        "address" => $_POST["address"],
-        "color" => $_POST["color"],
-        "gender" => $_POST["gender"]
-    );
-
-    // get the user information
     
 
-    // 1
+    // 1. favorite tv show/movie
+    if (!isset($character)){
+        deny(1);
+    }
     if ($character == "walter_white"){
         $nerd["chem"]++;
     } elseif ($character == "sheldon") {
@@ -74,18 +64,37 @@
     } elseif ($character == "blackMirror") {
         $nerd["cs"]++;
     }
-    // 2
-    if ($sleepHours > 6){
+
+    // 2. how much sleep
+    if (!isset($character)){
+        deny(2);
+    }
+    if ($sleepHours > 6){ 
         $nerd["not"]++;
     } else {
         inc_nerd($nerd);
     }
-    // 3
-    $nerd[$skool]++;
-    // 4
-    $nerd[$equation]++;
-    // 5: youtube
-    $nerd[$youtube]++;
+
+    // 3 favorite school subject
+    if (!isset($skool)){
+        deny(3);
+    } else {
+        $nerd[$skool]++;
+    }
+
+    // 4. favorite equation
+    if (!isset($equation)){
+        deny(4);
+    } else {
+        $nerd[$equation]++;
+    }
+
+    // 5: youtube subs
+    if (!isset($youtube)){
+        deny(5);
+    } else{
+        $nerd[$youtube]++;
+    }
 
     // 6: social media
     if ($socialMedia == "a lot"){
@@ -94,23 +103,33 @@
         $nerd["not"]++;
     } elseif ($socialMedia == "a little"){
         $nerd = inc_nerd($nerd);
+    } elseif ($socialMedia == "what"){
+        $nerd = inc_nerd($nerd, 2);
+    }
+    else { // if the option is not in the list (validation)
+        deny(6);
     }
 
     // 7 sports
     if ($sports == "on"){
         $nerd["not"]++;
-    } else {
+        // if it doesn't exist, it means the user didn't check the box
+    } elseif (isset($sports)){
         $nerd = inc_nerd($nerd);
+    } else {
+        deny(7);
     }
 
-    // 8 introvert
+    // 8 introvert or not
     if ($projects == "group"){
         $nerd["not"]++;
-    } else {
+    } elseif ($projects == "individual") {
         $nerd = inc_nerd($nerd);
+    } else {
+        deny(8);
     }
 
-    // 9 fashion
+    // 9 fashion sense
     if ($pickClothes == "barely"){
         $nerd = inc_nerd($nerd,2);
     } elseif ($pickClothes == "1min"){
@@ -121,6 +140,8 @@
         $nerd = inc_nerd($nerd,3);
     } elseif ($pickClothes == "a lot"){
         $nerd["not"] += 2;
+    } else {
+        deny(9); // validation
     }
 
     // 10 workspace
@@ -140,7 +161,10 @@
     } elseif ($workspace == "dump"){
         // increase the highest nerd there is
         $nerd[highest($nerd)]++;
+    } else {
+        deny(10); // validation
     }
+
     
     // sort the array so that the highest is first
     arsort($nerd);
@@ -155,18 +179,19 @@
         "not" => "Not a nerd",
     );
 
-    echo "<p>Your result: </p>";
+    echo "<div class='results'><p>Your result: </p>";
     if ($fullName[$highest] == "Not a nerd"){
         echo "<h1>You are not a nerd?!!</h1>";
+        echo '<img src="https://mystickermania.com/cdn/stickers/school/i-am-not-a-nerd-i-am-just-smarter-than-you-512x512.png" alt="not a nerd??" width="200">';
     } else {
         echo "<h1>You are a $fullName[$highest] nerd!</h1>";
         echo '<img src="../nerd.jpg" alt="NERRRRD!!!" width="300" height="100" id="nerd">';
     }
-
+    
     
     echo '<br><br><table>';
     echo '<tr><th>Nerd type</th><th>Amount of nerd</th></tr>';
-
+    // displays the nerd
     foreach ($nerd as $key => $value) {
         if ($highest == $key){ // if the element is the highest one
             echo '<tr class="highlight"><td>' . htmlspecialchars($fullName[$key]) . '</td><td>' . htmlspecialchars($value) . '</td></tr>';
@@ -176,11 +201,48 @@
         
     }
     echo '</table>';
+    echo "</div>"; // end of the <div class="results">
+    
+    
+    // user info validation
+    if ($_POST["name"] == "" || $_POST["age"] == "" || $_POST["address"] == "" || $_POST["color"] == ""){
+        deny("information");
+    }
+    if(filter_var($_POST["email"], FILTER_VALIDATE_EMAIL) !== false){
+        deny("email");
+    }
+
+    // user information
+    $user = array(
+        "name" => $_POST["name"],
+        "age" => $_POST["age"],
+        "email" => $_POST["email"],
+        "address" => $_POST["address"],
+        "color" => $_POST["color"],
+    );
+
+    if (isset($_POST["gender"])){
+        $user["gender"] = $_POST["gender"];
+    } else {
+        deny("gender");
+    }
 
     echo "<h2>Here is the information you gave about yourself:</h2>";
-    print_array($user, "User:", "");
-    
 
+    // prints out the user information, making the first letter capital and a colon
+    echo '<table>';
+    echo "<tr><th>User info</th><th> </th></tr>";
+
+    // htemlspecialchars!!!!!!!
+    foreach ($user as $key => $value) {
+        if (isset($value)){
+            echo '<tr><td>' . ucfirst(htmlspecialchars($key)) . ':</td><td>' . 'None given' . '</td></tr>';
+        } else {
+            echo '<tr><td>' . ucfirst(htmlspecialchars($key)) . ':</td><td>' . htmlspecialchars($value) . '</td></tr>';
+        }
+    }
+    echo '</table>';
+    
 
     ?>
 

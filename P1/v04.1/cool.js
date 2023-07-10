@@ -48,6 +48,8 @@ $(document).ready(()=>{
 
     });
 
+
+
     // for the drop downs
     $("select").on("change", (event) => {
         let target = $(event.target);
@@ -72,6 +74,13 @@ $(document).ready(()=>{
     $("input[type=submit]").on("click", (event) => {
         $("div.pretest").show();
 
+    });
+
+    // for fun
+    $("input[type=color]").on("change", (event) => {
+        let target = $(event.target);
+        let color = target.val(); // get the color the user picked
+        $("header").css("background-color", color); // nice
     });
 
 
