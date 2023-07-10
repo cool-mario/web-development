@@ -21,31 +21,30 @@
         Answer these interesting questions. When you submit, you'll find out what type of nerd you most likely are! 
     </p>
 
-    <hr>
+    <hr><br><br>
 
     <form action="results.php" method="post">
 
         <!-- user's personal information -->
-
         <div class="pretest">
             <h3>First, we would like some information about you:</h3>
             <p>What's your name?</p>
-            <input type="text" name="name">
+            <input type="text" name="name" required>
 
             <p>What's your age?</p>
-            <input type="number" name="age">
+            <input type="number" name="age" required>
 
             <p>Email?</p>
-            <input type="email" name="email">
+            <input type="email" name="email" required>
 
             <p>What is your address?</p>
-            <input type="text" name="address">
+            <input type="text" name="address" required>
 
             <p>What is your favorite color? (click on the box or circle to select your color)</p>
             <input type="color" name="color">
 
             <p>What's your gender?</p>
-            <input type="radio" name="gender" id="female" value="female">
+            <input type="radio" name="gender" id="female" value="female" required>
             <label for="female">Female</label><br>
             <input type="radio" name="gender" id="male" value="male">
             <label for="male">Male</label><br>
@@ -64,7 +63,7 @@
         <!-- character -->
         <div>
             <p>Which TV show/movie do you like the most?</p>
-            <input type="radio" name="character" id="walter_white" value="walter_white">
+            <input type="radio" name="character" id="walter_white" value="walter_white" required>
             <label for="walter_white">Breaking Bad</label><br>
             <input type="radio" name="character" id="sheldon" value="sheldon">
             <label for="sheldon">The Big Bang Theory</label><br>
@@ -77,7 +76,7 @@
         <!-- sleep -->
         <div>
             <p>How many hours of sleep do you get on average?</p>
-            <input type="number" name="sleepHours" value=""><br>
+            <input type="number" name="sleepHours" value="" min="0" max="24" required><br>
         </div>
 
         <!-- skool -->
