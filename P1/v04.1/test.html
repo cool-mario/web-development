@@ -3,117 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="style.css"> -->
-    <style>
-        body {
-            background-color: rgb(0, 48, 61);
-            color: antiquewhite;
-            margin-left: 2%;
-            margin-right: 2%;
-        }
-
-        /* form {
-            background-color: rgb(30,31,34);
-        } */
-        /* title stuff */
-        h1, h1+p {
-            text-align: center;
-        }
-        h1 {
-            font-size: 250%;
-        }
-        /* select question titles */
-        form p {
-            color: rgb(220,196,140);
-            font-weight: bold;
-        }
-
-        div {
-            border: 1px solid #2f5d72;
-            border-radius: 5px;
-            margin:auto; /* omg this centers the thing! */
-            width:80%;
-        }
-
-        /* question answers */
-        label {
-            line-height: 1.5;
-        }
-        /* the nerd image */
-        img#nerd {
-            position: absolute;
-            top: 9%;
-            margin: 10px;
-        }
-
-        /* inputs */
-        input {
-            background-color:rgb(30,31,34);
-            color: aliceblue;
-            margin: 3px 3px 0px 20px;
-        }
-        input[type="number"] {
-            font-size: 200%;
-            width: 60px;
-        }
-        input[type="checkbox"] {
-            width: 50px;
-            height: 50px;
-            margin-left: 3%;
-        }
-        input[type="submit"] {
-            font-size: 200%;
-        }
-        select {
-            background-color: rgb(0, 101, 101);
-            color: antiquewhite;
-            margin-left: 2%;
-        }
-
-        /* greys out the selected answers (make them 0.5 transparent) */
-        .answered {
-            color:rgba(250, 235, 215, 0.7);
-            /* opacity: 0.7; */
-        }
-        div.answered > p {
-            color: rgba(220, 196, 140, 0.7);
-            /* opacity: 0.7; */
-        }
-
-        /* highlights selected answers */
-        .selected {
-            color: rgb(253, 194, 18);
-            border: 1px solid #2f5d72;
-            border-radius: 5px;
-            font-weight: bold;
-        }
-
-        /* pretest css stuff */
-        #pretestButton {
-            background-color:rgb(30,31,34);
-            font-size: 150%;
-            color: aliceblue;
-        }
-        div.pretest > h3 {
-            text-align: center;
-        }
-
-        /* link color*/
-        a {
-            color:rgb(129,207,255);
-        }
-        a:hover{
-            color:rgb(129, 182, 255);
-        }
-        
-
-    </style>
+    <!-- import style sheet -->
+    <link rel="stylesheet" href="style.css">
+    <!-- import jQuery and my own JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
 	<script src="cool.js"></script>
     <title>The Nerd Test</title>
 </head>
 <body>
     <header>
+        <img src="../logo.jpg" alt="NERRRRD!!!" width="300" id="nerd">
         <h1>The Nerd test!</h1>
     </header>
     
@@ -122,7 +21,6 @@
     <h2>Instructions</h2>
     <p>
         Answer these interesting questions. When you submit, you'll find out what type of nerd you most likely are! 
-        <img src="../nerd.jpg" alt="NERRRRD!!!" width="70" id="nerd">
     </p>
 
     <hr>
@@ -145,7 +43,7 @@
             <p>What is your address?</p>
             <input type="text" name="address">
 
-            <p>What is your favorite color? (click on the bot to select your color)</p>
+            <p>What is your favorite color? (click on the box or circle to select your color)</p>
             <input type="color" name="color">
 
             <p>What's your gender?</p>

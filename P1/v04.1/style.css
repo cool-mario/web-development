@@ -1,0 +1,115 @@
+body {
+    background-color: rgb(0, 48, 61);
+    color: antiquewhite;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+/* form {
+    background-color: rgb(30,31,34);
+} */
+/* title stuff */
+h1, h1+p {
+    text-align: center;
+} 
+/* make h1 bigger!! */
+h1 {
+    font-size: 250%;
+}
+/* everything in the header */
+header > * {
+    display: inline-block;
+    text-align: center;
+}
+header {
+    text-align: center;
+}
+/* The standard HEADER!!! */
+img#nerd {
+    display: inline-block;
+    vertical-align: middle;    
+    /* margin-bottom: 2%; */
+    margin-right: 2%;
+    /* nice round image */
+    border-radius: 20px;
+}
+
+/* select question titles */
+form p {
+    color: rgb(220,196,140);
+    font-weight: bold;
+}
+
+div {
+    border: 1px solid #2f5d72;
+    border-radius: 5px;
+    margin:auto; /* omg this centers the thing! */
+    width:80%;
+}
+
+/* question answers */
+label {
+    line-height: 1.5;
+}
+
+
+
+/* inputs */
+input {
+    background-color:rgb(30,31,34);
+    color: aliceblue;
+    margin: 3px 3px 0px 20px;
+}
+input[type="number"] {
+    font-size: 200%;
+    width: 60px;
+}
+input[type="checkbox"] {
+    width: 50px;
+    height: 50px;
+    margin-left: 3%;
+}
+input[type="submit"] {
+    font-size: 200%;
+}
+select {
+    background-color: rgb(0, 101, 101);
+    color: antiquewhite;
+    margin-left: 2%;
+}
+
+/* greys out the selected answers (make them 0.5 transparent) */
+.answered {
+    color:rgba(250, 235, 215, 0.7);
+    /* opacity: 0.7; */
+}
+div.answered > p {
+    color: rgba(220, 196, 140, 0.7);
+    /* opacity: 0.7; */
+}
+
+/* highlights selected answers */
+.selected {
+    color: rgb(253, 194, 18);
+    border: 1px solid #2f5d72;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* pretest css stuff */
+#pretestButton {
+    background-color:rgb(30,31,34);
+    font-size: 150%;
+    color: aliceblue;
+}
+div.pretest > h3 {
+    text-align: center;
+}
+
+/* link color*/
+a {
+    color:rgb(129,207,255);
+}
+a:hover{
+    color:rgb(129, 182, 255);
+}

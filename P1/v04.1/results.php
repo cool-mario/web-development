@@ -3,22 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="results.css">
     <style>
-        body {
-            background-color: black;
-            color: antiquewhite;
-            margin-left: 3%;
-        }
-        /* make table look better */
-        th, td {
-            background-color:  rgb(75,73,129);
-            padding: 10px;
-        }
-        /* selects the nerd level thats the highest */
-        tr.highlight > td {
-            background-color: rgb(0 139 255);
-            color: yellow;
-            font-weight: bold;
+        header {
+            /* the background is the user's favorite color! */
+            background-color: <?php echo $_POST["color"];?> ;
         }
     </style>
 
@@ -28,8 +17,10 @@
     <!-- <h1>Your results!</h1> -->
     <?php
 
+    require_once("header.php");
+
     require_once("functions.php");
-    var_dump($_POST);
+    // var_dump($_POST);
     print_array($_POST);
     
 
@@ -50,16 +41,16 @@
     // $notANerd = 0;      // not a nerd!
 
     // get all the post request values
-    $character = $_POST["character"];
-    $sleepHours = $_POST["sleepHours"];
-    $skool = $_POST["skool"];
-    $equation = $_POST["equation"];
-    $youtube = $_POST["youtube"];
-    $socialMedia = $_POST["socialMedia"];
+    $character = $_POST["character"] ?? "none";
+    $sleepHours = $_POST["sleepHours"] ?? "none";
+    $skool = $_POST["skool"] ?? "none";
+    $equation = $_POST["equation"] ?? "none";
+    $youtube = $_POST["youtube"] ?? "none";
+    $socialMedia = $_POST["socialMedia"] ?? "none";
     $sports = $_POST["sports"] ?? "off"; // if the box isn't checked it doesn't exist
-    $projects = $_POST["projects"];
-    $pickClothes = $_POST["pickClothes"];
-    $workspace = $_POST["workspace"];
+    $projects = $_POST["projects"] ?? "none";
+    $pickClothes = $_POST["pickClothes"] ?? "none";
+    $workspace = $_POST["workspace"] ?? "none";
 
     // get the user information
     
@@ -155,8 +146,8 @@
         "not" => "Not a nerd",
     );
 
-    if ($fullName[$highest] == "Not a"){
-        echo "<h1>You are not a nerd?!</h1>";
+    if ($fullName[$highest] == "Not a nerd"){
+        echo "<h1>You are not a nerd?!!</h1>";
     } else {
         echo "<h1>You are a $fullName[$highest] nerd!</h1>";
         echo '<img src="../nerd.jpg" alt="NERRRRD!!!" width="300" height="100" id="nerd">';
