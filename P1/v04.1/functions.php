@@ -46,6 +46,8 @@
         }
         // shows a link to go back, and ends the code
         echo '<a href="test.html">Go back!!</a>';
+        
+        require_once("footer.php");
         die(); // die.
     }
 

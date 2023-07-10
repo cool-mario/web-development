@@ -243,7 +243,7 @@
     }
     echo '</table>';
     
-
+    require_once("footer.php");
     ?>
 
     
