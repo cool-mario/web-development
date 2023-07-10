@@ -11,10 +11,8 @@
     <title>The Nerd Test</title>
 </head>
 <body>
-    <header>
-        <img src="../logo.jpg" alt="NERRRRD!!!" width="300" id="nerd">
-        <h1>The Nerd test!</h1>
-    </header>
+
+    <?php require_once("header.php");?>
     
     <p>which one r u?</p>
 
@@ -210,12 +208,8 @@
 
     </form>
 
-    <br><br><hr>
-    <footer>
-        <a href="//atdpsites.berkeley.edu/validate/">Validate HTML</a>
-        <p>ATDP Corp.</p>
-        <p>Made by Aidan C =)</p>
-    </footer>
+
+    <?php require_once("footer.php");?>
 
 </body>
 </html>
