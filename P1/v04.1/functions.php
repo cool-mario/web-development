@@ -1,9 +1,9 @@
 <?php
 
     // prints out a neat array
-    function print_array($thing){
+    function print_array($thing, $key = "Key", $value = "Value"){
         echo '<table>';
-        echo '<tr><th>Key</th><th>Value</th></tr>';
+        echo "<tr><th>$key</th><th>$value</th></tr>";
     
         foreach ($thing as $key => $value) {
             echo '<tr><td>' . htmlspecialchars($key) . '</td><td>' . htmlspecialchars($value) . '</td></tr>';
@@ -24,7 +24,7 @@
         return $nerd;
     }
 
-    // returns the highest key of the nerd
+    // returns the highest key of the nerd, takes in array
     function highest($nerd){
         // sort it so that highest is first (nerd doesn't change tho because this is in a function)
         arsort($nerd);

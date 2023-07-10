@@ -12,6 +12,10 @@ table {
     margin-left: auto;
     margin-right: auto;
 }
+/* subtle effect for no reason */
+table td:hover, table th:hover {
+    opacity: 0.7;
+}
 /* selects the nerd level thats the highest */
 tr.highlight > td {
     background-color: rgb(0 139 255);

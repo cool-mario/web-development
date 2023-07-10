@@ -21,7 +21,7 @@
 
     require_once("functions.php");
     // var_dump($_POST);
-    print_array($_POST);
+    // print_array($_POST);
     
 
     $nerd = array(
@@ -41,16 +41,25 @@
     // $notANerd = 0;      // not a nerd!
 
     // get all the post request values
-    $character = $_POST["character"] ?? "none";
-    $sleepHours = $_POST["sleepHours"] ?? "none";
-    $skool = $_POST["skool"] ?? "none";
-    $equation = $_POST["equation"] ?? "none";
-    $youtube = $_POST["youtube"] ?? "none";
-    $socialMedia = $_POST["socialMedia"] ?? "none";
-    $sports = $_POST["sports"] ?? "off"; // if the box isn't checked it doesn't exist
-    $projects = $_POST["projects"] ?? "none";
-    $pickClothes = $_POST["pickClothes"] ?? "none";
-    $workspace = $_POST["workspace"] ?? "none";
+    $character = $_POST["character"] ?? null;
+    $sleepHours = $_POST["sleepHours"] ?? null;
+    $skool = $_POST["skool"] ?? null;
+    $equation = $_POST["equation"] ?? null;
+    $youtube = $_POST["youtube"] ?? null;
+    $socialMedia = $_POST["socialMedia"] ?? null;
+    $sports = $_POST["sports"] ?? null; // if the box isn't checked it doesn't exist
+    $projects = $_POST["projects"] ?? null;
+    $pickClothes = $_POST["pickClothes"] ?? null;
+    $workspace = $_POST["workspace"] ?? null;
+
+    $user = array(
+        "name" => $_POST["name"],
+        "age" => $_POST["age"],
+        "email" => $_POST["email"],
+        "address" => $_POST["address"],
+        "color" => $_POST["color"],
+        "gender" => $_POST["gender"]
+    );
 
     // get the user information
     
@@ -146,6 +155,7 @@
         "not" => "Not a nerd",
     );
 
+    echo "<p>Your result: </p>";
     if ($fullName[$highest] == "Not a nerd"){
         echo "<h1>You are not a nerd?!!</h1>";
     } else {
@@ -167,6 +177,8 @@
     }
     echo '</table>';
 
+    echo "<h2>Here is the information you gave about yourself:</h2>";
+    print_array($user, "User:", "");
     
 
 
