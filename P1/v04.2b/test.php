@@ -37,11 +37,13 @@
             <p>Email?</p>
             <input type="email" name="email" required>
 
+            <p>What is your favorite color? (click on the box or circle to select your color) <span id="colorsecret">(now look at the top of this page!)</span></p>
+            <input type="color" name="color" value="#FFA500" required>
+            
+
             <p>What is your address?</p>
             <input type="text" name="address" required>
 
-            <p>What is your favorite color? (click on the box or circle to select your color)</p>
-            <input type="color" name="color">
 
             <p>What's your gender?</p>
             <input type="radio" name="gender" id="female" value="female" required>
@@ -62,7 +64,7 @@
 
         <!-- character -->
         <div>
-            <p>Which TV show/movie do you like the most?</p>
+            <p>1. Which TV show/movie do you like the most?</p>
             <input type="radio" name="character" id="walter_white" value="walter_white" required>
             <label for="walter_white">Breaking Bad</label><br>
             <input type="radio" name="character" id="sheldon" value="sheldon">
@@ -75,14 +77,14 @@
 
         <!-- sleep -->
         <div>
-            <p>How many hours of sleep do you get on average?</p>
+            <p>2. How many hours of sleep do you get on average?</p>
             <input type="number" name="sleepHours" value="" min="0" max="24" required><br>
         </div>
 
         <!-- skool -->
         <div>
-            <p>What's your favorite class? (or one you most want to take)</p>
-            <input type="radio" name="skool" id="APchem" value="chem">
+            <p>3. What's your favorite class? (or one you most want to take)</p>
+            <input type="radio" name="skool" id="APchem" value="chem" required>
             <label for="APchem">Chemistry</label><br>
             <input type="radio" name="skool" id="APcalc" value="math">
             <label for="APcalc">Calculus</label><br>
@@ -101,8 +103,8 @@
 
         <!-- equation -->
         <div>
-            <p>What's your favorite equation?</p>
-            <input type="radio" name="equation" id="chemistry" value="chem">
+            <p>4. What's your favorite equation?</p>
+            <input type="radio" name="equation" id="chemistry" value="chem" required>
             <label for="chemistry">C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> + 6O<sub>2</sub> → 6CO<sub>2</sub> + 6H<sub>2</sub>O + Energy</label><br>
             
             <input type="radio" name="equation" id="math" value="math">
@@ -121,8 +123,8 @@
 
         <!-- youtube channel -->
         <div>
-            <p>Which Youtube channel do you watch the most?</p>
-            <input type="radio" name="youtube" id="3b1b" value="math">
+            <p>5. Which Youtube channel do you watch the most?</p>
+            <input type="radio" name="youtube" id="3b1b" value="math" required>
             <label for="3b1b">3Blue1Brown</label>
             
             <input type="radio" name="youtube" id="NileRed" value="chem">
@@ -142,7 +144,7 @@
 
         <!-- Social media -->
         <div>
-            <p><label for="socialMedia">How many people follow you on social media? (like youtube, instagram, etc)</label></p>
+            <p><label for="socialMedia">6. How many people follow you on social media? (like youtube, instagram, etc)</label></p>
             <select name="socialMedia" id="socialMedia">
                 <option value="---">click for dropdown!</option>
                 <option value="a lot">Like more than 100 people!</option>
@@ -154,14 +156,14 @@
 
         <!-- sports -->
         <div>
-            <p>Are you on a sports team?</p>
+            <p>7. Are you on a sports team?</p>
             <input type="checkbox" name="sports">
         </div>
 
         <!-- introvert -->
         <div>
-            <p>Do you like individual projects or group projects?</p>
-            <input type="radio" name="projects" id="individual" value="individual">
+            <p>8. Do you like individual projects or group projects?</p>
+            <input type="radio" name="projects" id="individual" value="individual" required>
             <label for="individual">Individual projects</label>
             <input type="radio" name="projects" id="group" value="group">
             <label for="group">Group projects</label>
@@ -169,7 +171,7 @@
 
         <!-- fashion -->
         <div>
-            <p>How much time do you spend picking out your clothes for the day?</p>
+            <p>9. How much time do you spend picking out your clothes for the day?</p>
             <select name="pickClothes">
                 <option value="---">click for dropdown!</option>
                 <option value="barely">0.0024351 nanoseconds</option>
@@ -182,12 +184,12 @@
 
         <!-- workspace -->
         <div>
-            <p>What is your ideal workspace?</p>
-            <input type="radio" name="workspace" id="organized" value="organized">
+            <p>10. What is your ideal workspace?</p>
+            <input type="radio" name="workspace" id="organized" value="organized" required>
             <label for="organized">Organized and neat</label><br>
 
             <input type="radio" name="workspace" id="experiment" value="experiment">
-            <label for="experiment">Full of experimental gadjects that you made</label><br>
+            <label for="experiment">Full of experimental gadgets that you made</label><br>
 
             <input type="radio" name="workspace" id="dump" value="dump">
             <label for="dump">A total garbage dump</label><br>

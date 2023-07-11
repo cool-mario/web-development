@@ -5,6 +5,7 @@ $(document).ready(()=>{
 
     // HIDE ALL TEST QUESTIONS
     $("div.pretest").nextAll().hide();
+    $("#colorsecret").hide();
 
     // loop thru all inputs
     // for (let i = 0; i < inputs.length; i++){
@@ -81,6 +82,7 @@ $(document).ready(()=>{
         let target = $(event.target);
         let color = target.val(); // get the color the user picked
         $("header").css("background-color", color); // nice
+        $("#colorsecret").show(1000);
     });
 
 

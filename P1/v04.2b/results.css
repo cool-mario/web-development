@@ -16,7 +16,7 @@ table {
 }
 /* subtle effect for no reason */
 table td:hover, table th:hover {
-    opacity: 0.7;
+    opacity: 0.8;
 }
 /* selects the nerd level thats the highest */
 tr.highlight > td {
@@ -34,8 +34,20 @@ header > * {
     display: inline-block;
     text-align: center;
 }
-header {
+header, h1, h2 {
     text-align: center;
+}
+/* a glitch!??  */
+#footerp{
+    font-size: 9999999%;
+}
+/* the image that shows when you are a nerd */
+#nerdImage {
+    /* all this to center an image */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 20px;
 }
 /* The standard HEADER!!! */
 img#nerd {
@@ -53,7 +65,7 @@ img#nerd {
     margin-left: auto;
     margin-right: auto;
 
-    border: 4px solid #00665f;
+    border: 1vmin solid #00665f;
     border-radius: 20px;
     padding:2%;
 }

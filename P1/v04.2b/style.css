@@ -106,8 +106,20 @@ div.answered > p {
 div.pretest > h3 {
     text-align: center;
 }
+/* make color box bigger */
+input[type=color] { 
+    width: 3vmax;
+    background-color: rgb(0, 48, 61);
+    height: 3vmax;
+    border: 0px solid;
+    padding: 0;
+}
+#colorsecret {
+    font-weight: lighter;
+    color: mediumpurple;
+}
 
-/* link color*/
+/* link colors*/
 a {
     color:rgb(129,207,255);
 }

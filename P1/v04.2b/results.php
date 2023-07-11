@@ -114,7 +114,7 @@
     if ($sports == "on"){
         $nerd["not"]++;
         // if it doesn't exist, it means the user didn't check the box
-    } elseif (isset($sports)){
+    } elseif (!isset($sports)){
         $nerd = inc_nerd($nerd);
     } else {
         deny(7);
@@ -152,11 +152,11 @@
         $nerd["chem"]++;
         $nerd["physics"]++;
     } elseif ($workspace == "art"){
-        $nerd["literature"]++;
+        $nerd["lit"]++;
     } elseif ($workspace == "tech"){
         $nerd["cs"]++;
     } elseif ($workspace == "books"){
-        $nerd["literature"]++;
+        $nerd["lit"]++;
         $nerd["history"]++;
     } elseif ($workspace == "dump"){
         // increase the highest nerd there is
@@ -179,13 +179,13 @@
         "not" => "Not a nerd",
     );
 
-    echo "<div class='results'><p>Your result: </p>";
+    echo "<div class='results'>";
     if ($fullName[$highest] == "Not a nerd"){
         echo "<h1>You are not a nerd?!!</h1>";
         echo '<img src="https://mystickermania.com/cdn/stickers/school/i-am-not-a-nerd-i-am-just-smarter-than-you-512x512.png" alt="not a nerd??" width="200">';
     } else {
         echo "<h1>You are a $fullName[$highest] nerd!</h1>";
-        echo '<img src="../nerd.jpg" alt="NERRRRD!!!" width="300" height="100" id="nerd">';
+        echo '<img src="../nerd.jpg" alt="NERRRRD!!!" width="200" id="nerdImage">';
     }
     
     
@@ -193,15 +193,17 @@
     echo '<tr><th>Nerd type</th><th>Amount of nerd</th></tr>';
     // displays the nerd
     foreach ($nerd as $key => $value) {
-        if ($highest == $key){ // if the element is the highest one
-            echo '<tr class="highlight"><td>' . htmlspecialchars($fullName[$key]) . '</td><td>' . htmlspecialchars($value) . '</td></tr>';
-        } else {
-            echo '<tr><td>' . htmlspecialchars($fullName[$key]) . '</td><td>' . htmlspecialchars($value) . '</td></tr>';
-        }
+        if ($value != ""){
+            if ($highest == $key){ // if the element is the highest one
+                echo '<tr class="highlight"><td>' . htmlspecialchars($fullName[$key]) . '</td><td>' . htmlspecialchars($value) . '</td></tr>';
+            } else {
+                echo '<tr><td>' . htmlspecialchars($fullName[$key]) . '</td><td>' . htmlspecialchars($value) . '</td></tr>';
+            }
+        }    
+            
         
     }
     echo '</table>';
-    echo "</div>"; // end of the <div class="results">
     
     
     // user info validation
@@ -235,18 +237,18 @@
 
     // htemlspecialchars!!!!!!!
     foreach ($user as $key => $value) {
-        if (isset($value)){
-            echo '<tr><td>' . ucfirst(htmlspecialchars($key)) . ':</td><td>' . 'None given' . '</td></tr>';
+        if ((!isset($value)) || $value == ""){
+            echo '<tr><td>' . ucfirst(htmlspecialchars($key)) . ':</td><td>' . 'None given!' . '</td></tr>';
         } else {
             echo '<tr><td>' . ucfirst(htmlspecialchars($key)) . ':</td><td>' . htmlspecialchars($value) . '</td></tr>';
         }
     }
     echo '</table>';
+    echo "</div>"; // end of the <div class="results">
     
-    require_once("footer.php");
     ?>
 
-    
+    <?php require_once("footer.php"); ?>
     
 </body>
 </html>
