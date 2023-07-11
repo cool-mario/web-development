@@ -2,7 +2,7 @@
 
 Here you can find various projects I made for an advanced Web Development class I took in the summer! This class required everyone to have taken APCSA and HTML classes already, so it's pretty advanced. In this class, I learned programming on the frontend and backend (PHP), and database design. We learned how to code in PHP, JavaScript, SQL, HTML, CSS, and more.  
 
-You can find stuff I created like games and strange websites. For example, I made a lights-out game using javascript, and you can play it on your phone. (see X4) P1 is my first project, which is a quiz to find out what type of "nerd" you are! I'm working on back-end validation right now.
+You can find stuff I created like games and strange websites. For example, I made a lights-out game using javascript, and you can play it on your phone. (see X4) P1 is my first project, which is a quiz to find out what type of "nerd" you are! I just finished it! (try to break the form, I have backend validation hehehehe)
 
 ### Key for the folder names
 **H** - homework  
