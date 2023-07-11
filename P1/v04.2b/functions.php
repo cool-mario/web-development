@@ -5,7 +5,7 @@
         echo '<table>';
         echo "<tr><th>$key</th><th>$value</th></tr>";
     
-        // htemlspecialchars!!!!!!!
+        // htmlspecialchars!!!!!!!
         foreach ($thing as $key => $value) {
             echo '<tr><td>' . htmlspecialchars($key) . '</td><td>' . htmlspecialchars($value) . '</td></tr>';
         }
@@ -37,6 +37,7 @@
     // if label is a int, then it's one of the question problems
     // this makes it so that the user knows what went wrong
     function deny($label){
+        $label = htmlspecialchars($label);
         if (gettype($label) === "string"){
             echo '<h2 class="error">You didn\'t input your ' . $label . ' correctly!! (¬_¬)</h2>';
 
@@ -45,7 +46,7 @@
             
         }
         // shows a link to go back, and ends the code
-        echo '<a href="test.html">Go back!!</a>';
+        echo '<a href="test.php" class="error">Go back!!</a>';
         
         require_once("footer.php");
         die(); // die.

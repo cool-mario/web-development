@@ -32,7 +32,7 @@
             <input type="text" name="name" required>
 
             <p>What's your age?</p>
-            <input type="number" name="age" required>
+            <input type="number" name="age" min="0" max="122" required>
 
             <p>Email?</p>
             <input type="email" name="email" required>

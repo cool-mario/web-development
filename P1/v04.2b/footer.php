@@ -1,3 +1,4 @@
+<!-- standard footer for each page with the validate link-->
 <?php
 
 echo'   

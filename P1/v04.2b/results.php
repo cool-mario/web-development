@@ -7,7 +7,13 @@
     <style>
         header {
             /* the background is the user's favorite color! */
-            background-color: <?php echo htmlspecialchars($_POST["color"]);?> ;
+            
+            <?php 
+                // check if it exists before adding the style
+                if (isset($_POST["color"]) && $_POST["color"] != ""){
+                    echo "background-color: " . htmlspecialchars($_POST["color"]) . ";";
+                }
+            ?>
         }
     </style>
 
@@ -184,7 +190,7 @@
         echo "<h1>You are not a nerd?!!</h1>";
         echo '<img src="https://mystickermania.com/cdn/stickers/school/i-am-not-a-nerd-i-am-just-smarter-than-you-512x512.png" alt="not a nerd??" width="200">';
     } else {
-        echo "<h1>You are a $fullName[$highest] nerd!</h1>";
+        echo "<h1>You are a ". htmlspecialchars($fullName[$highest]) . " nerd!</h1>";
         echo '<img src="../nerd.jpg" alt="NERRRRD!!!" width="200" id="nerdImage">';
     }
     

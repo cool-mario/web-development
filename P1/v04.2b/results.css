@@ -34,12 +34,15 @@ header > * {
     display: inline-block;
     text-align: center;
 }
-header, h1, h2 {
+header, h1, h2, a {
     text-align: center;
+}
+a.error {
+    margin-left:30%;
 }
 /* a glitch!??  */
 #footerp{
-    font-size: 9999999%;
+    display:none;
 }
 /* the image that shows when you are a nerd */
 #nerdImage {
