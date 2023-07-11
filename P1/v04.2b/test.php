@@ -38,7 +38,7 @@
             <input type="email" name="email" required>
 
             <p>What is your favorite color? (click on the box or circle to select your color) <span id="colorsecret">(now look at the top of this page!)</span></p>
-            <input type="color" name="color" value="#FFA500" required>
+            <input type="color" name="color" value="#FFA500">
             
 
             <p>What is your address?</p>
