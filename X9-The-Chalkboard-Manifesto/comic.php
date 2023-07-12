@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="fancy.css">
-    <title>The Latest comic!</title>
+    <title>Comics!!</title>
 </head>
 <body>
     
@@ -25,9 +25,9 @@ try {
         
         if (!isset($_GET["id"]) || !filter_var($_GET["id"], FILTER_VALIDATE_INT) || $_GET["id"] < 1 || $_GET["id"] > $lastID){
             echo '<p class="error">ID is not valid!!! Got latest comic.</p>';
-            # get latest comic
+            # get the latest comic
             $sth = $dbh->prepare("SELECT * FROM comic ORDER BY `date` DESC LIMIT 1"); //never put variables in here
-            $id = 1;
+            $id = $lastID;
         }
         else {
             // if the id is valid
@@ -50,6 +50,7 @@ try {
 catch (PDOException $error) {
     echo "<p class='error'>Error connecting to database!</p>";
     echo "<p>" . $error->getMessage() . "</p>";
+    echo "<p class='error'>Try reloading the page, it will probably fix it</p>";
     die(); 
 }
 
@@ -62,6 +63,7 @@ $prevID = $id-1;
 echo '<a href="comic.php?id=' . $prevID . '">Previous</a>';
 echo '<a href="comic.php?id=' . $nextID . '">Next</a>'; 
 echo '<a href="comic.php?id=' . $lastID . '">Latest</a>'; 
+echo '<a href="comic.php?id=' . 1 . '">First</a>'; 
 echo '<br><br>';
 // extra credit
 // if there is no info, $info is a boolean for some reason

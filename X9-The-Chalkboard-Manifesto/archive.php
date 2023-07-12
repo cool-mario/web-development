@@ -17,7 +17,6 @@ try {
     //getting multiple rows
     $sth = $dbh->prepare("SELECT * FROM comic WHERE date >= :start ORDER BY date DESC");
     $sth->bindValue(':start', '2005-05-01');
-    // $sth->bindValue(':end', '2011-12-31');
     $sth->execute();
     $comics = $sth->fetchAll(); //an array of arrays
     //$comics[0]['title']
@@ -29,9 +28,10 @@ catch (PDOException $error) {
 
 echo "<h1>The Comic Archives</h1>";
 
+// loop through all the comics
 foreach ($comics as $comic) {     
     echo '<a href="//atdpsites.berkeley.edu/chalkboardmanifesto/'.$comic['fileName'].'">';
-    echo $comic['date'] . "&ensp;";
+    echo $comic['date'] . "&ensp;"; // this is a big space character
     echo $comic['title'];
 
     echo '</a><br>';

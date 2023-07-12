@@ -35,15 +35,15 @@ catch (PDOException $e) {
     echo "<p>" . $error->getMessage() . "</p>";
 }
 
-echo "<h1>First query</h1>";
+echo "<h1>Latest Comic:</h1>";
 echo "<p>Comic from {$comic['date']}</p>";
 echo "<p>{$comic['title']}</p>";
 
-echo "<h2>Comics</h2>";
+// echo "<h2>Comics</h2>";
 
     echo '<img src="/../../chalkboardmanifesto/'.$comic['fileName'].'">'; // remember the closing quote
-    echo "<p>".$comic['title']."</p>";
-    echo "<p>".$comic['date']."</p>";
+    // echo "<p>".$comic['title']."</p>";
+    // echo "<p>".$comic['date']."</p>";
 
 // print an array of comics
 // foreach ($comics as $comic) {
