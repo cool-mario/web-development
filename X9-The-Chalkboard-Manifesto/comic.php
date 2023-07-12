@@ -38,19 +38,19 @@ try {
 
         }
     
-    
     $sth->execute();
     $comic = $sth->fetch(); //stores comics in associative array
 
     // get comic info
     $sth = $dbh->prepare("SELECT * FROM info WHERE comicID = :thing");
-
-    var_dump($comic);
-    
+    $sth->bindValue(':thing', $id);
+    $sth->execute();
+    $info = $sth->fetch(); //stores comics in associative array
 }
 catch (PDOException $error) {
     echo "<p class='error'>Error connecting to database!</p>";
     echo "<p>" . $error->getMessage() . "</p>";
+    die(); 
 }
 
 echo "<h1>Comics!!</h1>";
@@ -63,6 +63,11 @@ echo '<a href="comic.php?id=' . $prevID . '">Previous</a>';
 echo '<a href="comic.php?id=' . $nextID . '">Next</a>'; 
 echo '<a href="comic.php?id=' . $lastID . '">Latest</a>'; 
 echo '<br><br>';
+// extra credit
+// if there is no info, $info is a boolean for some reason
+if (gettype($info) != "boolean"){
+    echo "<p>".$info["text"]."</p>";
+}
 echo '<img src="/../../chalkboardmanifesto/'.$comic['fileName'].'" class="comic">'; // remember the closing quote
 
 
