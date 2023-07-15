@@ -1,0 +1,3 @@
+DROP TABLE IF EXISTS parkamon;
+DROP TABLE IF EXISTS player;
+DROP TABLE IF EXISTS ownership;
