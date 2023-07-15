@@ -23,15 +23,14 @@
 
         // var_dump($_POST);
 
-        // get the list of valid players
+        // get the list of valid players (for validation)
         $sth = $dbh->prepare("SELECT * FROM player ORDER BY `id` DESC LIMIT 1");
         $sth->execute();
         $player = $sth->fetchAll();
         $lastPlayerID = $player[0]["id"];
 
-        if ($_POST["players"] > $lastPlayerID){
+        if ($_POST["players"] > $lastPlayerID || $_POST["players"] < 0){
             echo "<p>Your player is invalid!!! >_<</p>";
-            echo '<a href="game.php">Go back to the game</a>';
             die();
         }
 
@@ -42,9 +41,9 @@
         $success = $sth->execute();
 
         if ($success){
-            echo "<p>Parkamon was caught!</p>";
+            echo "<p>A Parkamon was caught!</p>";
         } else {
-            echo "<p>idk something happened and u didn't catch anything L + ratio</p>";
+            echo "<p>There was an error and u didn't catch anything L + ratio</p>";
         }
         
 

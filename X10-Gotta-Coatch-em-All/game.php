@@ -8,14 +8,14 @@
     <title>Parkamon game</title>
 </head>
 <body>
-    <h1>Catch a Parkamon!!</h1>
+    <h1>Parkamon!!</h1>
+    <p>(Definitly not a knockoff of Pokemon)</p>
+
+
     <form action="catch.php" method="post">
-
+        <h2>Catch a Parka:</h2>
         <p>Choose a player:</p>
-
         <?php
-        // loop thru players
-
         require_once "config.php";
         
         try {
@@ -26,6 +26,7 @@
             $players = $sth->fetchAll();
             
             echo "<select name='players'>";
+            // loop thru players
             foreach ($players as $person){
                 echo "<option value='{$person['id']}'>".$person["name"].'</option>';
             }
@@ -55,8 +56,8 @@
             // var_dump($everything);
             foreach ($everything as $thing) {
                 echo "<p>";
-                echo "{$thing['name']} has a {$thing['nickname']}! ";
-                echo "Its Breed: {$thing['breed']}, Location: {$thing['location']}";
+                echo "{$thing['name']} has a {$thing['breed']} named \"{$thing['nickname']}\"! ";
+                echo "Its location is the {$thing['location']}";
 
                 echo "</p>";
             }
@@ -66,21 +67,33 @@
         }
 
         ?>
+
     <h2>Rename your parkamon! ^_^</h2>
     <form action="rename.php" method="post">
             
         <?php
         
         try {
-            echo "<select name='parkamon'>";
-            foreach ($players as $person){
-                echo "<option value='{$person['id']}'>".$person["name"].'</option>';
+
+            $sth = $dbh->prepare("SELECT parkamon.breed, ownership.id, nickname  FROM `ownership`
+                                  JOIN `parkamon` ON ownership.parkamon_id = parkamon.id
+                                ");
+            $sth->execute();
+            $ownedParkas = $sth->fetchAll();
+
+            // var_dump($ownedParkas);
+            echo "<p>Select Parkamon: ";
+            echo "<select name='renameID'>";
+            foreach ($ownedParkas as $parka){
+                echo "<option value='{$parka['id']}'>a " . $parka["breed"] . " named \"" . $parka["nickname"]."\"</option>";
+                // var_dump($parka);
+                // echo "<option value='{$person['id']}'>".$person["name"].'</option>';
             }
 
-            echo "</select><br>";
+            echo "</select></p>";
 
-            echo '<p>New name:</p><input type="text" maxlength="8">';
-            echo '<input type="submit" value="Catch!">';
+            echo '<p>Give a new name: (8 chars max)</p><input type="text" maxlength="8" name="newname" placeholder="new name here" required>';
+            echo '<input type="submit" value="Rename">';
         } catch (PDOException $e) {
             echo "<p>Error: {$e->getMessage()}</p>";
         }

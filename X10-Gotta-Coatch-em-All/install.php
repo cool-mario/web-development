@@ -12,7 +12,7 @@
 // file_get_contents documentation: https://www.php.net/manual/en/function.file-get-contents.php
 // PDO->exec() documentation https://www.php.net/manual/en/pdo.exec.php
 
-require_once "../X9-The-Chalkboard-Manifesto/config.php";
+require_once "config.php";
 try {
     $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
     $query = file_get_contents('parkamon.sql');
