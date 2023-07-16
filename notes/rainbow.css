@@ -1,0 +1,33 @@
+/* import this into index.html (and hover over the table!!!!!) */
+th:hover, td:hover {
+    animation: rainbow 6s infinite;
+}
+:root {
+    --rainbow-alpha: 0.1;
+}
+@keyframes rainbow {
+    0% {
+        background-color: rgba(255, 165, 0, var(--rainbow-alpha)); /* Orange */
+    }
+    14% {
+        background-color: rgba(255, 255, 0, var(--rainbow-alpha)); /* Yellow */
+    }
+    28% {
+        background-color: rgba(0, 128, 0, var(--rainbow-alpha)); /* Green */
+    }
+    42% {
+        background-color: rgba(0, 0, 255, var(--rainbow-alpha)); /* Blue */
+    }
+    57% {
+        background-color: rgba(75, 0, 130, var(--rainbow-alpha)); /* Indigo */
+    }
+    71% {
+        background-color: rgba(143, 0, 255, var(--rainbow-alpha)); /* Violet */
+    }
+    85% {
+        background-color: rgba(255, 0, 0, var(--rainbow-alpha)); /* Red */
+    }
+    100% {
+        background-color: rgba(255, 165, 0, var(--rainbow-alpha)); /* Orange */
+    }
+}
