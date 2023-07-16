@@ -1,0 +1,21 @@
+body {
+    background-color: darkslategray;
+    color: peachpuff;
+    margin-left:auto;
+    margin-right:auto;
+    width:90%;
+}
+/* link colors!*/
+a:any-link {
+    color:rgb(129,207,255);
+}
+a:any-link:hover{
+    color:rgb(129, 182, 255);
+}
+input, select {
+    color:peachpuff ;
+    background-color: darkslateblue;
+}
+h1 {
+    font-size: 250%;
+}
