@@ -19,22 +19,21 @@
         $sth->execute();
         $ownerships = $sth->fetch();
         
-    
+        // var_dump($_POST);
         // validation is the if statement
-        if (isset($_POST["renameID"]) && isset($_POST["newname"]) && strlen($_POST["newname"]) <= 8){
+        if (isset($_POST["releaseID"])){
             // rename the pokemon
-            $sth = $dbh->prepare("UPDATE `ownership`
-                                  SET nickname = :newname
+            $sth = $dbh->prepare("DELETE FROM `ownership`
                                   WHERE id = :id
                                 ");
-            $sth->bindValue(':newname', $_POST["newname"]);
-            $sth->bindValue(':id', $_POST['renameID']);
+
+            $sth->bindValue(':id', $_POST['releaseID']);
             $success = $sth->execute();
 
             if ($success){
-                echo "<h2>Parkamon renamed!</h2>";
+                echo "<h2>Parkamon has been freed into the wild!</h2>";
             } else {
-                echo "<p>There was an error your Parkamon wasn't renamed...</p>";
+                echo "<p>There was an error! your Parkamon wasn't freed...</p>";
             }
 
         } else {

@@ -41,7 +41,7 @@
         $success = $sth->execute();
 
         if ($success){
-            echo "<p>A Parkamon was caught!</p>";
+            echo "<h2>A Parkamon was caught!</h2>";
         } else {
             echo "<p>There was an error and u didn't catch anything L + ratio</p>";
         }

@@ -86,8 +86,6 @@
             echo "<select name='renameID'>";
             foreach ($ownedParkas as $parka){
                 echo "<option value='{$parka['id']}'>a " . $parka["breed"] . " named \"" . $parka["nickname"]."\"</option>";
-                // var_dump($parka);
-                // echo "<option value='{$person['id']}'>".$person["name"].'</option>';
             }
 
             echo "</select></p>";
@@ -100,10 +98,37 @@
     
 
         ?>
-        
-
     </form>
 
+    <h2>Release your parkamon into the wild! (*^‿^*)</h2>
+    <form action="release.php" method="post">
+            
+        <?php
+        
+        try {
+
+            $sth = $dbh->prepare("SELECT parkamon.breed, ownership.id, nickname  FROM `ownership`
+                                  JOIN `parkamon` ON ownership.parkamon_id = parkamon.id
+                                ");
+            $sth->execute();
+            $ownedParkas = $sth->fetchAll();
+
+            // var_dump($ownedParkas);
+            echo "<p>Select Parkamon to release: ";
+            echo "<select name='releaseID'>";
+            foreach ($ownedParkas as $parka){
+                echo "<option value='{$parka['id']}'>a " . $parka["breed"] . " named \"" . $parka["nickname"]."\"</option>";
+            }
+
+            echo "</select></p>";
+
+            echo '<input type="submit" value="Release">';
+        } catch (PDOException $e) {
+            echo "<p>Error: {$e->getMessage()}</p>";
+        }
+    
+        ?>
+    </form>
     
 </body>
 </html>
