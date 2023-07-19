@@ -1,3 +1,11 @@
+<?php 
+session_start(); 
+if (empty($_SESSION)){
+    header("Location: signin.php"); // redirect to signin if not signed in
+    die(); // 💀
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

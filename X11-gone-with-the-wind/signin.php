@@ -8,8 +8,8 @@
     <title>Sign in</title>
 </head>
 <body>
-
-    <h1>Sign in</h1>
+    <h1>Welcome to Parkamon!!</h1>
+    <h2>Sign in</h2>
     <form action="game.php" method="post">
 
     <?php
@@ -24,7 +24,7 @@
         $sth->execute();
         $players = $sth->fetchAll();
         
-        echo "<p>Player: <select name='player'></p>";
+        echo "<p>Choose player: <select name='player'></p>";
         // loop thru players
         foreach ($players as $person){
             echo "<option value='{$person['id']}'>".$person["name"].'</option>';
@@ -36,6 +36,10 @@
         echo "</p>";
 
         echo '<input type="submit" value="Log in">';
+        // extra credit: 
+        if (isset($_GET['m']) && $_GET['m'] == "wrong"){
+            echo "<br><br><strong class='red'>Incorrect Password!!!!</strong>";
+        }
 
     }
     catch (PDOException $e) {

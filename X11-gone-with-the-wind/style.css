@@ -16,3 +16,8 @@ input, select {
     color:peachpuff ;
     background-color: darkslateblue;
 }
+/* for the error message */
+.red {
+    background-color: brown;
+    padding: 10px;
+}

@@ -1,5 +1,13 @@
 <?php 
 session_start(); 
+
+// if no post or sessions
+if (empty($_POST) && empty($_SESSION)){
+    header( "Location: signin.php");
+    die();
+}
+
+
 require_once "config.php";
 ?>
 
@@ -16,24 +24,26 @@ require_once "config.php";
 
 
     <?php
-
-    var_dump($_POST);
-    echo "<br><br>";
+    // if there is no player id in session, update the session with POST
     if (isset($_SESSION["player_id"])){
-            
+    
     } elseif (isset($_POST) && isset($_POST["player"])){ 
         
         $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
-        // get the list of valid players (for validation)
+        // get the player with the matching id
         $sth = $dbh->prepare("SELECT * FROM player WHERE id = :userid");
         $sth->bindValue(":userid", $_POST["player"]);
         $sth->execute();
-        $login = $sth->fetch();
+        $user = $sth->fetch();
 
-        if (password_verify($_POST["password"], $login["password_hash"])){
+        // check if password is good
+        if (password_verify($_POST["password"], $user["password_hash"])){
+            // set session thing
             $_SESSION["player_id"] = $_POST["player"];
         } else {
-            echo "wrong password";
+            echo "<p>Wrong password!!</p>";
+            header( "Location: signin.php?m=wrong"); // go back to sign in if password is wrong
+            die();
         }
     }
 
@@ -52,7 +62,7 @@ require_once "config.php";
 
         
 
-        echo "<h1>Logged in: " . $player["name"] . "</h1>";
+        echo "<h1>Logged in as " . $player["name"] . "</h1>";
         
 
 
@@ -99,7 +109,7 @@ require_once "config.php";
         }
         ?>
     </form>
-    <h2>Owned parkamon:</h2>
+    <h2>Caught parkamon:</h2>
         <?php
         try {
 

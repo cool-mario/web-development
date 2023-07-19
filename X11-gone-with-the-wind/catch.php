@@ -1,4 +1,10 @@
-<?php session_start(); ?>
+<?php 
+session_start(); 
+if (empty($_SESSION)){
+    header("Location: signin.php"); // redirect to signin if not signed in
+    die();
+}
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -31,14 +37,14 @@
         $player = $sth->fetchAll();
         $lastPlayerID = $player[0]["id"];
 
-        if ($_SESSION["UserID"] > $lastPlayerID || $_SESSION["UserID"] < 0){
+        if ($_SESSION["player_id"] > $lastPlayerID || $_SESSION["player_id"] < 0){
             echo "<p>Your player is invalid!!! >_<</p>";
             die();
         }
 
         // update the owners
         $sth = $dbh->prepare("INSERT INTO ownership (`player_id`,`parkamon_id`,`nickname`) VALUES (:player, :parkamon, 'Joe')");
-        $sth->bindValue(':player', $_SESSION["UserID"]);
+        $sth->bindValue(':player', $_SESSION["player_id"]);
         $sth->bindValue(':parkamon', $parkamon['id']);
         $success = $sth->execute();
 
