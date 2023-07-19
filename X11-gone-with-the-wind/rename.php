@@ -22,31 +22,36 @@ if (empty($_SESSION)){
             
     try {
         $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
-
-        $sth = $dbh->prepare("SELECT id FROM `ownership`");
-        $sth->execute();
-        $ownerships = $sth->fetch();
         
     
         // validation is the if statement
         if (isset($_POST["renameID"]) && isset($_POST["newname"]) && strlen($_POST["newname"]) <= 8){
 
-            // check if pokemon getting renamed is owned by teh right person
+            // check if pokemon getting renamed is owned by the person
+            // get the owner id from the ownership id that was submitted and see if it matches the session id
+            $sth = $dbh->prepare("SELECT player_id FROM `ownership` WHERE ownership.id = :renameid");
+            $sth->bindValue(":renameid", $_POST["renameID"]);
+            $sth->execute();
+            $owner = $sth->fetch();
 
+            // backend validation: check if the owner of the parkamon is the same as the current user
+            if ($owner["player_id"] == $_SESSION["player_id"]){
+                // rename the pokemon
+                $sth = $dbh->prepare("UPDATE `ownership`
+                                    SET nickname = :newname
+                                    WHERE id = :id
+                                    ");
+                $sth->bindValue(':newname', $_POST["newname"]);
+                $sth->bindValue(':id', $_POST['renameID']);
+                $success = $sth->execute();
 
-            // rename the pokemon
-            $sth = $dbh->prepare("UPDATE `ownership`
-                                  SET nickname = :newname
-                                  WHERE id = :id
-                                ");
-            $sth->bindValue(':newname', $_POST["newname"]);
-            $sth->bindValue(':id', $_POST['renameID']);
-            $success = $sth->execute();
-
-            if ($success){
+                if ($success){
                 echo "<h2>Parkamon renamed!</h2>";
-            } else {
+                } else {
                 echo "<p>There was an error your Parkamon wasn't renamed...</p>";
+                }
+            } else {
+                echo "<p>That's not your Parkamon!!</p>";
             }
 
         } else {
