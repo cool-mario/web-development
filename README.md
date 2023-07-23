@@ -11,6 +11,10 @@ You can find stuff I created like games and strange websites. For example, I mad
 
 also see `index.html` for links to all the other pages displayed in a nice table!  
 
+This is `index.html` as of 7/22/23
+<img width="1000" alt="image" src="https://github.com/cool-mario/web-development/assets/50786617/fb97d796-7c9f-4642-9e42-0aad559dd5d9">
+
+----
 
 This is `index.html` as of 7/11/23
 <img width="966" alt="image" src="https://github.com/cool-mario/web-development/assets/50786617/74580dd8-dc3a-4d99-ae24-d97c63e9d612">
