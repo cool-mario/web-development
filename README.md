@@ -4,6 +4,8 @@ Here you can find various projects I made for an advanced Web Development class 
 
 You can find stuff I created like games and strange websites. For example, I made a lights-out game using javascript, and you can play it on your phone. (see X4) P1 is my first project, which is a quiz to find out what type of "nerd" you are! I just finished it! (try to break the form, I have backend validation hehehehe)
 
+**`P2`** is our second and final project. In P2, a partner and I work together to create something super cool. We're making a store website right now, where you can create new accounts and log in and buy stuff!! It is the final test of our knowledge!!!
+
 ### Key for the folder names
 **H** - homework  
 **X** - exersize  
