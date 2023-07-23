@@ -2,6 +2,6 @@
 // Database Settings
 define('DB_DSN', 'mysql:host=localhost;dbname=acchan'); // change dbname to your username
 define('DB_USER', 'acchan');
-define('DB_PASSWORD', 'L+RATIO+U FELL OFF');
+define('DB_PASSWORD', 'OwO');
 
 ?>
